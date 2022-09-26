@@ -3,9 +3,9 @@ import './client.css';
 import 'swiper/swiper.min.css';
 
 
-const images = [
+// const images = [
 
-];
+// ];
 export default function Client() {
 
   return (

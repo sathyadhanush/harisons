@@ -2,11 +2,11 @@
 import React from 'react';
 import './Products.css';
 import 'swiper/swiper.min.css';
-import ImageGallery from 'react-image-gallery';
+// import ImageGallery from 'react-image-gallery';
 
-const images = [
+// const images = [
 
-];
+// ];
 export default function About() {
 
   return (

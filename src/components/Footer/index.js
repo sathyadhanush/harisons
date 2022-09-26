@@ -102,11 +102,17 @@ export default function Footer() {
             </i>
             Service
           </a>
-          <a href="#About" className="links">
+          <a href="#Gallery" className="links">
             <i>
               <FontAwesomeIcon icon={faArrowRight} />
             </i>
-            About
+            Gallery
+          </a>
+          <a href="#Client" className="links">
+            <i>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </i>
+            Client
           </a>
         
          
