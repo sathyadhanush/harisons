@@ -1,0 +1,82 @@
+@import 'variables';
+
+.react-datepicker {
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+  &__header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px !important;
+    background-color: #FFF;
+    border-color: transparent;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  &__header-navigation {
+    display: flex;
+
+    &--month {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--previous,
+    &--next {
+      display: inline-flex;
+      border: 1px solid #DDD;
+      height: 30px;
+      width: 30px;
+      border-radius: 4px;
+      color: #888;
+      display: inline-flex;
+      flex-shrink: 0;
+      background-color: #FFF;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      ion-icon {
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: #FAFAFA;
+      }
+    }
+  }
+
+  &__month {
+    margin: 0;
+  }
+
+  &__day,
+  &__day-name {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: 30px;
+    width: 30px;
+  }
+
+  &__day--keyboard-selected,
+  &__day--selected {
+    background-color: $theme-color;
+    color: #FFF;
+    font-weight: normal;
+
+    &:hover {
+      background-color: $theme-color;
+    }
+  }
+
+  &__day-name {
+    color: #AFAFAF;
+  }
+}

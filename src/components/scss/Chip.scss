@@ -1,0 +1,17 @@
+@import "variables";
+
+.#{$prefix}-chip {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  padding: 0px 20px;
+  background-color: #E7FAE1;
+  border-radius: 50px;
+  color: $theme-color;
+
+  &__icon {
+    padding: 5px 0px;
+    padding-left: 5px;
+    cursor: pointer;
+  }
+}

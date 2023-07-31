@@ -1,0 +1,81 @@
+.background-img-comtainer {
+  background: url(../../components/img/background-image.png) no-repeat center center fixed;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-service-container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 30px;
+  justify-content: center;
+}
+
+.product-service-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(241, 235, 235);
+  border-radius: 10px;
+}
+
+.product-service-image {
+  width: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.client-container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 20px;
+  justify-content: center;
+}
+
+.client-container-item {
+  border-radius: 50px;
+  background-color: rgb(241, 235, 235);
+  padding: 15px 25px;
+}
+
+.why-harison-container {
+  background: url(../../components/img/bluebanner.png) no-repeat center center fixed;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
+  padding: 100px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: aliceblue;
+  padding: 50px 0px;
+}
+
+.modules-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid rgb(228, 229, 231);
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+}

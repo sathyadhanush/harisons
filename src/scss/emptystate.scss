@@ -1,0 +1,32 @@
+@import "variables";
+
+.ui-emptystate {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  &__image {
+    width: 180px;
+    height: 180px;
+    color: $theme-color;
+    margin-bottom: 16px;
+  }
+
+  &__heading {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    max-width: 500px;
+    text-align: center;
+    color: #666;
+  }
+
+  &__actions {
+    margin-top: 24px;
+  }
+}

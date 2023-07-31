@@ -1,0 +1,18 @@
+.ui-resourcelist {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__item {
+    display: flex;
+    padding: 10px 0;
+  }
+
+  &__items {
+    overflow-y: auto;
+  }
+
+  &__search {
+    margin-bottom: 10px;
+  }
+}

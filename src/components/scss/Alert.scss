@@ -1,0 +1,44 @@
+@import "variables";
+
+.#{$prefix}-alert {
+  border: 1px solid;
+  display: flex;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+
+  &--warn {
+    background-color: rgb(255, 226, 172);
+    border-color: rgb(255, 162, 0);
+  }
+
+  &--error {
+    background-color: rgb(255, 172, 172);
+    border-color: rgb(255, 0, 0);
+  }
+
+  &--info {
+    background-color: rgb(172, 232, 255);
+    border-color: rgb(0, 174, 255);
+  }
+
+  &--success {
+    background-color: rgb(172, 255, 172);
+    border-color: rgb(0, 202, 44);
+  }
+
+  &__remove {
+    margin-left: auto;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: .1);
+    }
+  }
+}

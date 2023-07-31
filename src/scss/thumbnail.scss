@@ -1,0 +1,73 @@
+.ui-thumbnail {
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid #DDD;
+  position: relative;
+
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #DDD;
+    font-size: 62px;
+  }
+
+  &__remove {
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    color: #FFF;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+  }
+
+  &:hover &__remove + &__overlay {
+    opacity: 1;
+  }
+
+  &:hover &__remove {
+    opacity: 1;
+  }
+
+  &__overlay,
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+  }
+
+  &__image {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &--small {
+    height: 38px;
+    width: 38px;
+  }
+
+  &--small &__placeholder {
+    font-size: 30px;
+  }
+
+  &--medium {
+    height: 100px;
+    width: 100px;
+  }
+
+  &--large {
+    height: 125px;
+    width: 125px;
+  }
+}

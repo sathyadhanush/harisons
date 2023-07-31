@@ -1,0 +1,92 @@
+@import "variables";
+
+.ui-nav {
+  &__item {
+    list-style: none;
+    height: 32px;
+    position: relative;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+    &--active {
+      color: $theme-color;
+      font-weight: 700;
+
+      &::before {
+        background-color: $theme-color;
+      }
+    }
+  }
+}
+
+.ui-form-field-group {
+  display: flex;
+
+  .ui-form-field {
+    flex-grow: 1;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+}
+
+.ui-form-field__label {
+  display: block;
+  color: #74767a;
+  margin-bottom: 8px;
+}
+
+.ui-form {
+  width: 100%;
+  height: 100%;
+
+  &--sectioned {
+    display: flex;
+  }
+
+  &__nav {
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  &__sections {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .ui-button-group {
+    justify-content: right;
+  }
+}
+
+.ui-form-section {
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 32px;
+  margin-right: 24px;
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 24px;
+    justify-content: space-between;
+  }
+}
+
+.ui-form-section:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.ui-form-field:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.ui-form-empty-field {
+  display: flex;
+  width: 50%;
+}

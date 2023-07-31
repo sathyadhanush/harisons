@@ -1,0 +1,16 @@
+.ui-search {
+  // width: 230px !important;
+  height: 40px !important;
+
+  .ui-textinput__input-wrapper {
+    height: 40px !important;
+  }
+
+  input {
+    background-color: #FFF;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+}

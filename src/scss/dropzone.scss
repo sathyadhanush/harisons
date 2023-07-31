@@ -1,0 +1,46 @@
+@import 'variables';
+
+.ui-dropzone {
+  min-height: 150px;
+  padding: 24px 0;
+  background-color: #FAFAFA;
+  border: dashed 1px #DDD;
+  position: relative;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    border-color: #42855B;
+  }
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__hint {
+    color: #777777;
+    margin-bottom: 14px;
+  }
+
+  &__icon ion-icon {
+    color: $theme-color;
+    margin-bottom: 4px;
+    font-size: 48px;
+  }
+
+  &__action {
+    background-color: $theme-color;
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+}

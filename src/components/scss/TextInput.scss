@@ -1,0 +1,98 @@
+@import "variables";
+
+.#{$prefix}-textinput {
+  width: 100%;
+  position: relative;
+
+  &--invalid &__input {
+    border-color: #CA3521;
+  }
+
+  &__icon-prefix {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    height: 20px;
+    width: 20px;
+
+    ion-icon {
+      font-size: 20px;
+      color: #888;
+    }
+  }
+
+  &__icon-suffix {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+
+  &__icon-prefix+&__input {
+    padding-left: 38px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 48px;
+  }
+
+  &__error {
+    color: #CA3521;
+    margin-top: 5px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: inherit;
+    border: 0;
+    outline: 0;
+    border: 2px solid #DDD;
+
+
+
+    &:focus:not(:read-only) {
+      box-shadow: none;
+      border-color: $theme-color;
+    }
+  }
+}
+
+
+.#{$prefix}-otpinput {
+  &__digit {
+    display: inline-block;
+    font-size: 24px;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 1px #c7c8cd;
+    margin-right: 10px;
+
+    &:focus {
+      border-color: transparent;
+      outline: $theme-color solid 2px;
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}

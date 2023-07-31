@@ -1,0 +1,13 @@
+@import "./variables";
+
+.divider {
+  border-bottom: 1px solid #DDD;
+  flex-grow: 1;
+  margin: 10px 0px;
+}
+
+.ui-vertiacl-divider{
+  border-left: 1px solid #DDD;
+  flex-grow: 1;
+  margin: 0px 20px;
+}

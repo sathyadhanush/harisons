@@ -1,0 +1,25 @@
+.box-Img {
+  width: 96px;
+  height: 96px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.product-add {
+  border: 1px solid #146eb4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  margin-right: 10px;
+  justify-content: space-around;
+}
+
+.product-quantity-border {
+  border: 1px solid #146eb4;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+}

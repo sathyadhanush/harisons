@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+  --ui-color-theme:  #FD0200;;
+  --ui-color-theme-light: #4f9d6c;
+  --ui-color-theme-dark: #d50606;
+}
+
+body {
+  font-family: 'Inter';
+}
+
+.ui-heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ui-subheading {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #74767a;
+}
+
+.ui-link {
+  display: inline-flex;
+  align-items: center;
+  color: #42855B;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.ui-link-black {
+  display: inline-flex;
+  align-items: center;
+  color: black !important;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

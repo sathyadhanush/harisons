@@ -1,0 +1,43 @@
+@import "variables";
+
+.ui-menu {
+  border-radius: 4px;
+
+  &__header {
+    padding: 16px;
+    border-bottom: 1px solid #EBEDF0;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    margin: 4px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    &:hover:not(&--active) {
+      background-color: #EEE;
+    }
+
+    &--active {
+      background-color: $theme-color;
+      color: #FFF;
+      font-weight: 600;
+    }
+
+    &--critical {
+      color: #CA3521;
+    }
+  }
+
+  &__footer {
+    text-align: right;
+    padding: 16px;
+  }
+}

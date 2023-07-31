@@ -1,0 +1,33 @@
+@import "variables";
+
+.#{$prefix}-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__input {
+    appearance: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #DDD;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 10px;
+
+    &:checked {
+      background-color: $theme-color;
+      border-color: $theme-color;
+
+      &::before {
+        content: url('../img/tick.svg');
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
