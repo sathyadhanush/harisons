@@ -9,7 +9,6 @@ import { useRef } from 'react';
 function ContactUsFrom() {
   const form = useRef();
 
-
   const formik = useFormik({
     initialValues: {},
     validationSchema: Yup.object().shape({
@@ -37,7 +36,7 @@ function ContactUsFrom() {
     <form
       className="flex-column"
       ref={form}
-      style={{ alignItems: 'center' }}
+      style={{ alignItems: 'center', paddingBottom: '50px' }}
       onSubmit={formik.handleSubmit}
       id="contact"
     >

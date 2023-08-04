@@ -4,15 +4,23 @@ import { Heading, Text } from 'evergreen-ui';
 import Button from 'components/base/Button';
 import AppNavbar from 'components/AppNavbar';
 import Divider from 'components/base/Divider';
-import Page from 'components/Page';
 import RightAltArrown from '../../components/img/arrow_right_alt.svg';
 import ContactUsFrom from './ContactUsFrom';
 import LogoImg from '../../components/img/logo1.svg';
+import Footer from '../footer';
+import IC_PROFILE from '../../components/img/ic_profile.png';
+import IC_DESIGN from '../../components/img/ic_designe.png';
+import IC_DEVELOPMENT from '../../components/img/ic_development.png';
+import IC_QUALITY from '../../components/img/ic_quality.png';
 import './Home.scss';
 
 const list = [1, 2, 3, 4, 5, 6];
 const clientList = [1, 2, 3, 4, 5, 6, 8, 9, 10];
-const moduleList = ['Designe', 'Development', 'Quality Analysis'];
+const moduleList = [
+  { value: 'Design', img: IC_DESIGN },
+  { value: 'Development', img: IC_DEVELOPMENT },
+  { value: 'Quality Analysis', img: IC_QUALITY },
+];
 
 function Home() {
   function renderGridList({ heading, name, id }) {
@@ -50,12 +58,11 @@ function Home() {
                 style={{
                   height: '50px',
                   width: '50px',
-                  borderRadius: '50%',
                 }}
-                src="https://www.idg.se/editorial/480/path/1.439818.1332503169!teaserImage/imageTypeSelector/localImage/3359169481.jpg"
+                src={model.img}
                 alt=""
               />
-              <Heading fontSize={20}>{model}</Heading>
+              <Heading fontSize={20}>{model.value}</Heading>
             </div>
           ))}
         </div>
@@ -66,7 +73,7 @@ function Home() {
   function renderClients() {
     return (
       <div className="flex-column" style={{ alignItems: 'center' }} id="clients">
-        <Heading marginTop={60} marginBottom={30} fontSize={25}>Client</Heading>
+        <Heading marginTop={60} marginBottom={30} fontSize={25}>Clients</Heading>
         <div className="client-container">
           {clientList.map(() => (
             <div className="client-container-item">
@@ -88,7 +95,7 @@ function Home() {
               height: '350px',
               borderRadius: '10px',
             }}
-            src="https://www.idg.se/editorial/480/path/1.439818.1332503169!teaserImage/imageTypeSelector/localImage/3359169481.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAL_r36T9dtShfXHnNKnsR-UJK6BIgNEGu0Q&usqp=CAU"
             alt=""
           />
           <div className="flex-column" style={{ justifyContent: 'center' }}>
@@ -294,7 +301,8 @@ function Home() {
       {renderWhatOurClientSays()}
       {renderWhy()}
       <ContactUsFrom />
-      {renderFooter()}
+      {/* {renderFooter()} */}
+      <Footer />
     </>
   );
 }
