@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,8 +14,10 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
+import './Index.css';
+import { MENUS } from 'components/AppNavbar';
 
-export default function Footer() {
+export default function Footer({ setRoute }) {
   return (
     <footer className="footer" id="footer">
       <div className="box-container">
@@ -87,28 +88,16 @@ export default function Footer() {
         </div>
         <div className="box">
           <h3>quick info</h3>
-          <a href="#home" className="links">
-            <i><FontAwesomeIcon icon={faArrowRight} /></i>
-            Home
-          </a>
-          <a href="#products" className="links">
-            <i><FontAwesomeIcon icon={faArrowRight} /></i>
-            Products
-          </a>
-          <a href="#clients" className="links">
-            <i><FontAwesomeIcon icon={faArrowRight} /></i>
-            Clients
-          </a>
-          <a href="#about" className="links">
-            <i><FontAwesomeIcon icon={faArrowRight} /></i>
-            About
-          </a>
-          <a href="#contact" className="links">
-            <i>
-              <FontAwesomeIcon icon={faArrowRight} />
-            </i>
-            Contact
-          </a>
+          {MENUS.map((model) => (
+            <a
+              href={model.path}
+              className="links"
+              onClick={() => setRoute(model.path)}
+            >
+              <i><FontAwesomeIcon icon={faArrowRight} /></i>
+              {model.label}
+            </a>
+          ))}
         </div>
         <div className="box">
           <h3>newsletter</h3>
@@ -124,7 +113,7 @@ export default function Footer() {
         <p>
           Created By
           {' '}
-          <span>bigblue</span>
+          <span>OrkaApps</span>
           {' '}
           | All Rights Reserved
         </p>

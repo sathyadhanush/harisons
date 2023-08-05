@@ -2,16 +2,17 @@
 import '../../components/scss/FilterChip.scss';
 import { Heading, Text } from 'evergreen-ui';
 import Button from 'components/base/Button';
-import AppNavbar from 'components/AppNavbar';
+import AppNavbar, { MENUS } from 'components/AppNavbar';
 import Divider from 'components/base/Divider';
+import { useState } from 'react';
 import RightAltArrown from '../../components/img/arrow_right_alt.svg';
 import ContactUsFrom from './ContactUsFrom';
-import LogoImg from '../../components/img/logo1.svg';
-import Footer from '../footer';
+import Footer from '../footer/Footer';
 import IC_PROFILE from '../../components/img/ic_profile.png';
-import IC_DESIGN from '../../components/img/ic_designe.png';
+import IC_DESIGN from '../../components/img/ic_design.png';
 import IC_DEVELOPMENT from '../../components/img/ic_development.png';
 import IC_QUALITY from '../../components/img/ic_quality.png';
+import IC_PROCESS from '../../components/img/ic_process.png';
 import './Home.scss';
 
 const list = [1, 2, 3, 4, 5, 6];
@@ -23,6 +24,7 @@ const moduleList = [
 ];
 
 function Home() {
+  const [route, setRoute] = useState(MENUS[0].path);
   function renderGridList({ heading, name, id }) {
     return (
       <div className="flex-column" style={{ alignItems: 'center' }} id={id}>
@@ -50,7 +52,9 @@ function Home() {
   function renderAutomationAndModulues() {
     return (
       <div className="flex-column" style={{ alignItems: 'center' }}>
-        <Heading marginTop={40} marginBottom={30} fontSize={25}>Harisons Automation & Moulds</Heading>
+        <Heading marginTop={40} marginBottom={30} fontSize={25}>
+          Harisons Automation & Moulds
+        </Heading>
         <div className="flex" style={{ width: '80%', columnGap: '20px' }}>
           {moduleList.map((model) => (
             <div className="modules-container">
@@ -95,7 +99,7 @@ function Home() {
               height: '350px',
               borderRadius: '10px',
             }}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAL_r36T9dtShfXHnNKnsR-UJK6BIgNEGu0Q&usqp=CAU"
+            src={IC_PROFILE}
             alt=""
           />
           <div className="flex-column" style={{ justifyContent: 'center' }}>
@@ -128,7 +132,7 @@ function Home() {
                       borderRadius: '50%',
                       marginRight: '30px',
                     }}
-                    src="https://www.idg.se/editorial/480/path/1.439818.1332503169!teaserImage/imageTypeSelector/localImage/3359169481.jpg"
+                    src={IC_PROFILE}
                     alt=""
                   />
                   <div className="flex-column">
@@ -158,13 +162,11 @@ function Home() {
               >
                 <img
                   style={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
+                    height: '50px',
+                    width: '50px',
                   }}
-                  src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
                   alt=""
-                // src={IC_PROCESS}
+                  src={IC_PROCESS}
                 />
                 <Text fontSize="16px">Text </Text>
               </div>
@@ -189,11 +191,10 @@ function Home() {
               >
                 <img
                   style={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
+                    height: '50px',
+                    width: '50px',
                   }}
-                  src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
+                  src={IC_PROCESS}
                   alt=""
                 />
                 <Text fontSize="16px">Text </Text>
@@ -219,11 +220,10 @@ function Home() {
               >
                 <img
                   style={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
+                    height: '50px',
+                    width: '50px',
                   }}
-                  src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
+                  src={IC_PROCESS}
                   alt=""
                 />
                 <Text fontSize="16px">Text </Text>
@@ -249,11 +249,10 @@ function Home() {
               >
                 <img
                   style={{
-                    height: '70px',
-                    width: '70px',
-                    borderRadius: '50%',
+                    height: '50px',
+                    width: '50px',
                   }}
-                  src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
+                  src={IC_PROCESS}
                   alt=""
                 />
                 <Text fontSize="16px">Text </Text>
@@ -265,27 +264,9 @@ function Home() {
     );
   }
 
-  function renderFooter() {
-    return (
-      <div className="footer-container">
-        <div className="flex" style={{ width: '80%', alignItems: 'center' }}>
-          <div className="flex-column" style={{ width: '100%', rowGap: '8px' }}>
-            <Heading marginBottom={10}>Quick Links</Heading>
-            <Text color="gray" fontSize={16}>Home</Text>
-            <Text color="gray" fontSize={16}>Products</Text>
-            <Text color="gray" fontSize={16}>Case studies</Text>
-            <Text color="gray" fontSize={16}>About</Text>
-            <Text color="gray" fontSize={16}>Contact us</Text>
-          </div>
-          <img src={LogoImg} alt="logo" width={100} />
-        </div>
-      </div>
-    );
-  }
-
   return (
     <>
-      <AppNavbar />
+      <AppNavbar route={route} setRoute={setRoute} />
       <div className="background-img-comtainer" id="home" style={{ paddingTop: '50px' }}>
         <Heading color="white" fontSize="40px" marginBottom={20}>Harisons Automation & Moulds</Heading>
         <Text color="white" width="60%" fontSize="20px" marginBottom={40}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
@@ -301,8 +282,7 @@ function Home() {
       {renderWhatOurClientSays()}
       {renderWhy()}
       <ContactUsFrom />
-      {/* {renderFooter()} */}
-      <Footer />
+      <Footer setRoute={setRoute} />
     </>
   );
 }

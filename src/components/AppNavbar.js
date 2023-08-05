@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import Icons from './Icons';
-import LogoImg from './img/logo1.svg';
+import IC_HARISONS from './img/ic_harisons.svg';
 
-const MENUS = [
+export const MENUS = [
   {
     label: 'Home',
     path: '#home',
@@ -30,24 +30,31 @@ const MENUS = [
   },
 ];
 
-function AppNavbar() {
+function AppNavbar({ route, setRoute }) {
   function getNavLinkClassName({ isActive }) {
     return clsx('ui-sidebar-nav__link', {
       'ui-sidebar-nav__link--active': isActive,
     });
   }
-
   return (
     <div className="ui-sidebar">
       <div className="ui-sidebar__header">
-        <img src={LogoImg} alt="logo" width={100} />
+        <a
+          href={MENUS[0].path}
+          onClick={() => setRoute(MENUS[0].path)}
+        >
+          <img src={IC_HARISONS} alt="logo" width={100} />
+        </a>
       </div>
       <div className="ui-sidebar-nav">
         {MENUS.map((menu) => (
           <a
             className={getNavLinkClassName}
             href={menu.path}
-            style={{ color: 'gray' }}
+            style={{
+              color: route === menu.path ? '#FD0200' : 'gray',
+            }}
+            onClick={() => setRoute(menu.path)}
           >
             {menu.label}
           </a>

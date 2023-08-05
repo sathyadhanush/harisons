@@ -20,7 +20,7 @@
       border-color: $theme-color;
 
       &::before {
-        content: url('../img/tick.svg');
+        content: url('../../assets/tick.svg');
         position: absolute;
         top: 35%;
         left: 50%;
