@@ -16,6 +16,7 @@ import {
 import './Footer.css';
 import './Index.css';
 import { MENUS } from 'components/AppNavbar';
+import Button from 'components/base/Button';
 
 export default function Footer({ setRoute }) {
   return (
@@ -49,7 +50,7 @@ export default function Footer({ setRoute }) {
           </div>
         </div>
         <div className="box">
-          <h3>contact info</h3>
+          <h3>Contact Info</h3>
           <a href="/" className="links">
             <i>
               <FontAwesomeIcon icon={faPhone} />
@@ -87,7 +88,7 @@ export default function Footer({ setRoute }) {
           </a>
         </div>
         <div className="box">
-          <h3>quick info</h3>
+          <h3>Quick Info</h3>
           {MENUS.map((model) => (
             <a
               href={model.path}
@@ -100,12 +101,10 @@ export default function Footer({ setRoute }) {
           ))}
         </div>
         <div className="box">
-          <h3>newsletter</h3>
+          <h3>Newsletter</h3>
           <p>Subscribe For Latest Updates</p>
-          <input type="text" placeholder="your email" />
-          <button type="button" className="btn">
-            subscribe
-          </button>
+          <input type="text" placeholder="Your email" style={{ marginBottom: '20px' }} />
+          <Button appearance="primary">Subscribe</Button>
           <img src="image/payment.png" alt="" />
         </div>
       </div>
@@ -113,7 +112,14 @@ export default function Footer({ setRoute }) {
         <p>
           Created By
           {' '}
-          <span>OrkaApps</span>
+          <span
+            style={{
+              cursor: 'pointer',
+            }}
+            onClick={() => window.open('https://orkaapps.com/')}
+          >
+            OrkaApps
+          </span>
           {' '}
           | All Rights Reserved
         </p>

@@ -15,6 +15,7 @@ import IC_QUALITY from '../../components/img/ic_quality.png';
 import IC_PROCESS from '../../components/img/ic_process.png';
 import './Home.scss';
 
+const OUR_SERVICES_LIST = ['Parts Supplies', 'SPM', 'Injection Molds', 'Blow Molds', 'Stamping Parts'];
 const list = [1, 2, 3, 4, 5, 6];
 const clientList = [1, 2, 3, 4, 5, 6, 8, 9, 10];
 const moduleList = [
@@ -49,6 +50,30 @@ function Home() {
     );
   }
 
+  function ourServices() {
+    return (
+      <div className="flex-column" style={{ alignItems: 'center' }} id="services">
+        <Heading marginTop={40} marginBottom={30} fontSize={25}>Our services</Heading>
+        <div className="product-service-container">
+          {OUR_SERVICES_LIST.map((model) => (
+            <div className="product-service-item">
+              <img
+                // style={{
+                //   borderBottomLeftRadius: !name && '10px',
+                //   borderBottomRightRadius: !name && '10px',
+                // }}
+                className="product-service-image"
+                src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
+                alt=""
+              />
+              <Heading marginTop={15} marginBottom={10}>{model}</Heading>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   function renderAutomationAndModulues() {
     return (
       <div className="flex-column" style={{ alignItems: 'center' }}>
@@ -66,7 +91,8 @@ function Home() {
                 src={model.img}
                 alt=""
               />
-              <Heading fontSize={20}>{model.value}</Heading>
+              <Heading fontSize={20} paddingTop={20} paddingBottom={10}>{model.value}</Heading>
+              <Text fontSize={17}>Create websites that help you upscale your business through research based designs.</Text>
             </div>
           ))}
         </div>
@@ -92,7 +118,7 @@ function Home() {
   function renderWhatOurClientSays() {
     return (
       <div className="flex-column" style={{ alignItems: 'center' }}>
-        <Heading marginTop={60} marginBottom={30} fontSize={25}>What our clients say</Heading>
+        <Heading marginTop={60} marginBottom={30} fontSize={25}>What our clients say ?</Heading>
         <div style={{ display: 'flex', width: '80%', columnGap: '50px' }}>
           <img
             style={{
@@ -104,8 +130,8 @@ function Home() {
           />
           <div className="flex-column" style={{ justifyContent: 'center' }}>
             <Text fontSize={20}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,</Text>
-            <Heading fontSize={20} marginTop={20} marginBottom={10}>Name</Heading>
-            <Text fontSize={20}>Designation</Text>
+            <Heading fontSize={20} marginTop={20} marginBottom={10}>John Doe</Heading>
+            <Text fontSize={20}>CEO,Harisons.</Text>
           </div>
         </div>
       </div>
@@ -120,7 +146,7 @@ function Home() {
             <div className="flex-column" style={{ width: '50%' }}>
               <Heading color="white" fontSize="30px" marginBottom={30}>Why Harisons ?</Heading>
               <Text color="white" fontSize={20} marginBottom={20}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit</Text>
-              <div><Button appearance="primary">Contact us</Button></div>
+              <a href="#contact"><Button appearance="primary">Contact us</Button></a>
             </div>
             <div className="flex-column" style={{ width: '50%', rowGap: '20px' }}>
               {[0, 1, 2].map(() => (
@@ -270,14 +296,15 @@ function Home() {
       <div className="background-img-comtainer" id="home" style={{ paddingTop: '50px' }}>
         <Heading color="white" fontSize="40px" marginBottom={20}>Harisons Automation & Moulds</Heading>
         <Text color="white" width="60%" fontSize="20px" marginBottom={40}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
-        <Button appearance="primary">Let’s connect</Button>
+        <a href="#contact"><Button appearance="primary">Let’s connect</Button></a>
       </div>
       {renderAutomationAndModulues()}
-      {renderGridList({ heading: 'Products & Services', name: 'Module name', id: 'products' })}
+      {ourServices()}
+      {/* {renderGridList({ heading: 'Products & Services', name: 'Module name', id: 'products' })}
       <div className="flex" style={{ justifyContent: 'center', margin: '30px 0px' }}>
         <Button appearance="outline">Learn more</Button>
-      </div>
-      {renderGridList({ heading: 'Industries served' })}
+      </div> */}
+      {/* {renderGridList({ heading: 'Industries served' })} */}
       {renderClients()}
       {renderWhatOurClientSays()}
       {renderWhy()}

@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import Icons from './Icons';
 import IC_HARISONS from './img/ic_harisons.svg';
+import IC_CALL from './img/ic_call.svg';
+import IC_EMAIL from './img/ic_email.svg';
 
 export const MENUS = [
   {
@@ -9,8 +11,8 @@ export const MENUS = [
     icon: Icons.Home,
   },
   {
-    label: 'Products',
-    path: '#products',
+    label: 'Services',
+    path: '#services',
     icon: Icons.Home,
   },
   {
@@ -21,11 +23,6 @@ export const MENUS = [
   {
     label: 'About',
     path: '#about',
-    icon: Icons.Home,
-  },
-  {
-    label: 'Contact',
-    path: '#contact',
     icon: Icons.Home,
   },
 ];
@@ -47,19 +44,29 @@ function AppNavbar({ route, setRoute }) {
         </a>
       </div>
       <div className="ui-sidebar-nav">
-        {MENUS.map((menu) => (
-          <a
-            className={getNavLinkClassName}
-            href={menu.path}
-            style={{
-              color: route === menu.path ? '#FD0200' : 'gray',
-            }}
-            onClick={() => setRoute(menu.path)}
-          >
-            {menu.label}
+        <div className="flex" style={{ columnGap: '20px' }}>
+          {MENUS.map((menu) => (
+            <a
+              className={getNavLinkClassName}
+              href={menu.path}
+              style={{
+                color: route === menu.path ? '#FD0200' : 'gray',
+              }}
+              onClick={() => setRoute(menu.path)}
+            >
+              {menu.label}
+            </a>
+          ))}
+        </div>
+        <div className="flex">
+          <a href="#contact">
+            <img src={IC_CALL} style={{ width: '25px' }} alt="" />
           </a>
-        ))}
-        <ul className="ui-nav" />
+          <a href="#footer" style={{ paddingLeft: '15px' }}>
+            <img src={IC_EMAIL} style={{ width: '25px' }} alt="" />
+          </a>
+        </div>
+        {/* <ul className="ui-nav" /> */}
       </div>
     </div>
   );
