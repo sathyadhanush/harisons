@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { Text } from 'evergreen-ui';
 import Icons from './Icons';
 import IC_HARISONS from './img/ic_harisons.svg';
 import IC_CALL from './img/ic_call.svg';
