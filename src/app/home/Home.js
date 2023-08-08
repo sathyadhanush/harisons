@@ -13,12 +13,22 @@ import IC_DESIGN from '../../components/img/ic_design.png';
 import IC_DEVELOPMENT from '../../components/img/ic_development.png';
 import IC_QUALITY from '../../components/img/ic_quality.png';
 import IC_PROCESS from '../../components/img/ic_process.png';
+import IMG1 from '../../components/img/services/img1.jpg';
+import IMG2 from '../../components/img/services/img2.jpg';
+import IMG3 from '../../components/img/services/img3.jpg';
+import IMG4 from '../../components/img/services/img4.jpg';
+import IMG5 from '../../components/img/services/img5.jpg';
 import './Home.scss';
 
-const OUR_SERVICES_LIST = ['Parts Supplies', 'SPM', 'Injection Molds', 'Blow Molds', 'Stamping Parts'];
-const list = [1, 2, 3, 4, 5, 6];
-const clientList = [1, 2, 3, 4, 5, 6, 8, 9, 10];
-const moduleList = [
+const OUR_SERVICES_LIST = [
+  { name: 'Parts Supplies', img: IMG1 },
+  { name: 'SPM', img: IMG2 },
+  { name: 'Injection Molds', img: IMG3 },
+  { name: 'Blow Molds', img: IMG4 },
+  { name: 'Stamping Parts', img: IMG5 },
+];
+const CLIENT_LIST = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+const MODULE_LIST = [
   { value: 'Design', img: IC_DESIGN },
   { value: 'Development', img: IC_DEVELOPMENT },
   { value: 'Quality Analysis', img: IC_QUALITY },
@@ -26,30 +36,6 @@ const moduleList = [
 
 function Home() {
   const [route, setRoute] = useState(MENUS[0].path);
-  function renderGridList({ heading, name, id }) {
-    return (
-      <div className="flex-column" style={{ alignItems: 'center' }} id={id}>
-        <Heading marginTop={40} marginBottom={30} fontSize={25}>{heading}</Heading>
-        <div className="product-service-container">
-          {list.map(() => (
-            <div className="product-service-item">
-              <img
-                style={{
-                  borderBottomLeftRadius: !name && '10px',
-                  borderBottomRightRadius: !name && '10px',
-                }}
-                className="product-service-image"
-                src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
-                alt=""
-              />
-              {name && <Heading marginTop={15} marginBottom={10}>{name}</Heading>}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
   function ourServices() {
     return (
       <div className="flex-column" style={{ alignItems: 'center' }} id="services">
@@ -58,15 +44,11 @@ function Home() {
           {OUR_SERVICES_LIST.map((model) => (
             <div className="product-service-item">
               <img
-                // style={{
-                //   borderBottomLeftRadius: !name && '10px',
-                //   borderBottomRightRadius: !name && '10px',
-                // }}
                 className="product-service-image"
-                src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
                 alt=""
+                src={model.img}
               />
-              <Heading marginTop={15} marginBottom={10}>{model}</Heading>
+              <Heading marginTop={15} marginBottom={10}>{model.name}</Heading>
             </div>
           ))}
         </div>
@@ -81,7 +63,7 @@ function Home() {
           Harisons Automation & Moulds
         </Heading>
         <div className="flex" style={{ width: '80%', columnGap: '20px' }}>
-          {moduleList.map((model) => (
+          {MODULE_LIST.map((model) => (
             <div className="modules-container">
               <img
                 style={{
@@ -105,7 +87,7 @@ function Home() {
       <div className="flex-column" style={{ alignItems: 'center' }} id="clients">
         <Heading marginTop={60} marginBottom={30} fontSize={25}>Clients</Heading>
         <div className="client-container">
-          {clientList.map(() => (
+          {CLIENT_LIST.map(() => (
             <div className="client-container-item">
               <Heading>Client name</Heading>
             </div>
@@ -300,11 +282,6 @@ function Home() {
       </div>
       {renderAutomationAndModulues()}
       {ourServices()}
-      {/* {renderGridList({ heading: 'Products & Services', name: 'Module name', id: 'products' })}
-      <div className="flex" style={{ justifyContent: 'center', margin: '30px 0px' }}>
-        <Button appearance="outline">Learn more</Button>
-      </div> */}
-      {/* {renderGridList({ heading: 'Industries served' })} */}
       {renderClients()}
       {renderWhatOurClientSays()}
       {renderWhy()}

@@ -1,4 +1,3 @@
-import emailjs from 'emailjs-com';
 import { Heading, toaster } from 'evergreen-ui';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
