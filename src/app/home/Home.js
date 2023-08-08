@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable max-len */
 import '../../components/scss/FilterChip.scss';
 import { Heading, Text } from 'evergreen-ui';
@@ -42,7 +43,10 @@ function Home() {
         <Heading marginTop={40} marginBottom={30} fontSize={25}>Our services</Heading>
         <div className="product-service-container">
           {OUR_SERVICES_LIST.map((model) => (
-            <div className="product-service-item">
+            <div
+              className="product-service-item"
+              onClick={() => window.location.href = '/parts-supplies'}
+            >
               <img
                 className="product-service-image"
                 alt=""

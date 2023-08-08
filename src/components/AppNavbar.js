@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Text } from 'evergreen-ui';
 import Icons from './Icons';
 import IC_HARISONS from './img/ic_harisons.svg';
 import IC_CALL from './img/ic_call.svg';
@@ -59,11 +60,13 @@ function AppNavbar({ route, setRoute }) {
           ))}
         </div>
         <div className="flex">
-          <a href="#contact">
-            <img src={IC_CALL} style={{ width: '25px' }} alt="" />
+          <a href="#contact" className="flex" style={{ alignItems: 'center' }}>
+            <img src={IC_CALL} style={{ width: '25px', paddingRight: '5px' }} alt="" />
+            <div className="ui-sidebar-nav__link" style={{ color: 'gray' }}>Call me</div>
           </a>
-          <a href="#footer" style={{ paddingLeft: '15px' }}>
-            <img src={IC_EMAIL} style={{ width: '25px' }} alt="" />
+          <a href="#footer" className="flex" style={{ paddingLeft: '20px', alignItems: 'center' }}>
+            <img src={IC_EMAIL} style={{ width: '25px', paddingRight: '5px' }} alt="" />
+            <div className="ui-sidebar-nav__link" style={{ color: 'gray' }}>Email us</div>
           </a>
         </div>
         {/* <ul className="ui-nav" /> */}
