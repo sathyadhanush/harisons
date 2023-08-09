@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Heading } from 'evergreen-ui';
 import Icons from './Icons';
 import IC_HARISONS from './img/ic_harisons.svg';
 import IC_CALL from './img/ic_call.svg';
@@ -27,7 +28,9 @@ export const MENUS = [
   },
 ];
 
-function AppNavbar({ route, setRoute }) {
+function AppNavbar({
+  route, setRoute, heading = null, callMe = true,
+}) {
   function getNavLinkClassName({ isActive }) {
     return clsx('ui-sidebar-nav__link', {
       'ui-sidebar-nav__link--active': isActive,
@@ -44,28 +47,35 @@ function AppNavbar({ route, setRoute }) {
         </a>
       </div>
       <div className="ui-sidebar-nav">
-        <div className="flex" style={{ columnGap: '20px' }}>
-          {MENUS.map((menu) => (
-            <a
-              className={getNavLinkClassName}
-              href={menu.path}
-              style={{
-                color: route === menu.path ? '#FD0200' : 'gray',
-              }}
-              onClick={() => setRoute(menu.path)}
-            >
-              {menu.label}
-            </a>
-          ))}
-        </div>
+        {heading
+          ? <div className="flex" style={{ justifyContent: 'center', width: '100%' }}><Heading>{heading}</Heading></div>
+          : (
+            <div className="flex" style={{ columnGap: '20px' }}>
+              {MENUS.map((menu) => (
+                <a
+                  className={getNavLinkClassName}
+                  href={menu.path}
+                  style={{
+                    color: route === menu.path ? '#FD0200' : 'gray',
+                  }}
+                  onClick={() => setRoute(menu.path)}
+                >
+                  {menu.label}
+                </a>
+              ))}
+            </div>
+          )}
         <div className="flex">
-          <a href="#contact" className="flex" style={{ alignItems: 'center' }}>
-            <img src={IC_CALL} style={{ width: '25px', paddingRight: '5px' }} alt="" />
-            <div className="ui-sidebar-nav__link" style={{ color: 'gray' }}>Call me</div>
-          </a>
-          <a href="#footer" className="flex" style={{ paddingLeft: '20px', alignItems: 'center' }}>
+          {callMe
+            && (
+              <a href="#contact" className="flex" style={{ alignItems: 'center', paddingRight: '20px' }}>
+                <img src={IC_CALL} style={{ width: '25px', paddingRight: '5px' }} alt="" />
+                <div className="ui-sidebar-nav__link" style={{ color: 'gray' }}>Call</div>
+              </a>
+            )}
+          <a href="#footer" className="flex" style={{ alignItems: 'center' }}>
             <img src={IC_EMAIL} style={{ width: '25px', paddingRight: '5px' }} alt="" />
-            <div className="ui-sidebar-nav__link" style={{ color: 'gray' }}>Email us</div>
+            <div className="ui-sidebar-nav__link" style={{ color: 'gray' }}>Email</div>
           </a>
         </div>
         {/* <ul className="ui-nav" /> */}

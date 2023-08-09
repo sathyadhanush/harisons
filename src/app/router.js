@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import {
   Route,
   createHashRouter,
@@ -9,7 +10,7 @@ const router = createHashRouter(
   createRoutesFromElements(
     <Route>
       <Route element={<AppFrame />}>
-        <Route index lazy={() => import('./home/index')} />
+        <Route index lazy={() => import('./screens/productList/ProductList')} />
       </Route>
     </Route>,
   ),

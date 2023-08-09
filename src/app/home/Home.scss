@@ -24,6 +24,7 @@
   flex-direction: column;
   background-color: rgb(241, 235, 235);
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .product-service-image {
@@ -78,6 +79,5 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  // row-gap: 20px;
   padding: 20px;
 }

@@ -1,7 +1,7 @@
 const { pathname } = window.location;
-
-if (pathname === '/parts-supplies') {
-  import('./app/screens/parts-supplies/index');
+const routeList = ['/parts-supplies', '/spm', '/injection-molds', '/blow-molds', '/stamping-parts'];
+if (routeList.includes(pathname)) {
+  import('./app/screens/productList/index');
 } else {
   import('./app/index');
 }

@@ -21,12 +21,12 @@ import IMG4 from '../../components/img/services/img4.jpg';
 import IMG5 from '../../components/img/services/img5.jpg';
 import './Home.scss';
 
-const OUR_SERVICES_LIST = [
-  { name: 'Parts Supplies', img: IMG1 },
-  { name: 'SPM', img: IMG2 },
-  { name: 'Injection Molds', img: IMG3 },
-  { name: 'Blow Molds', img: IMG4 },
-  { name: 'Stamping Parts', img: IMG5 },
+export const OUR_SERVICES_LIST = [
+  { name: 'Parts Supplies', img: IMG1, path: '/parts-supplies' },
+  { name: 'SPM', img: IMG2, path: '/spm' },
+  { name: 'Injection Molds', img: IMG3, path: '/injection-molds' },
+  { name: 'Blow Molds', img: IMG4, path: '/blow-molds' },
+  { name: 'Stamping Parts', img: IMG5, path: '/stamping-parts' },
 ];
 const CLIENT_LIST = [1, 2, 3, 4, 5, 6, 8, 9, 10];
 const MODULE_LIST = [
@@ -45,7 +45,7 @@ function Home() {
           {OUR_SERVICES_LIST.map((model) => (
             <div
               className="product-service-item"
-              onClick={() => window.location.href = '/parts-supplies'}
+              onClick={() => window.location.href = model.path}
             >
               <img
                 className="product-service-image"
