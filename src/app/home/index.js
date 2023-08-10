@@ -1,13 +1,13 @@
-import Page from 'components/Page';
-import Home from './Home';
-import './Home.scss';
+// import Page from 'components/Page';
+// import Component from './Home';
+// import './Home.scss';
 
-function Component() {
-  return (
-    <Page>
-      <Home />
-    </Page>
-  );
-}
+// function Component() {
+//   return (
+//     <Page>
+//       <Component />
+//     </Page>
+//   );
+// }
 
-export { Component };
+// export { Component };
