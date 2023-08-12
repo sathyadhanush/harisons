@@ -10,7 +10,7 @@ const router = createHashRouter(
   createRoutesFromElements(
     <Route>
       <Route element={<AppFrame />}>
-        <Route index lazy={() => import('./screens/productList/ProductList')} />
+        <Route index lazy={() => import('./screens/services/Services')} />
       </Route>
       {/* <Route index lazy={() => import('./home/Home')} /> */}
       {/* <Route path=":id" lazy={() => import('./home/Home')} />

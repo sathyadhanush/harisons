@@ -77,10 +77,9 @@ function Component() {
           {OUR_SERVICES_LIST.map((model) => (
             <div
               className="product-service-item"
-              onClick={() => window.location.href = model.path}
+              onClick={() => window.location.href = '/services'}
               style={{ width: '200px', padding: '20px 0px' }}
             >
-              {/* <div className="product-service-image" /> */}
               <img
                 style={{
                   width: '50px',
@@ -88,11 +87,6 @@ function Component() {
                 alt=""
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Circle-icons-tools.svg/1200px-Circle-icons-tools.svg.png"
               />
-              {/* <img
-                className="product-service-image"
-                alt=""
-                src={model.img}
-              /> */}
               <Heading marginTop={15} marginBottom={10}>{model.name}</Heading>
             </div>
           ))}
